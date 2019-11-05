@@ -5,10 +5,12 @@ provider "aws" {
 }
 
 resource "aws_instance" "example" {
-  ami = "ami-02b3330196502d247"
+  ami = "ami-0e1e385b0a934254a"
   instance_type = "t2.micro"
+  key_name = "seoul"
   tags = {
     "Owner" = "int32bit"
     "Name" = "int32bit-test-ft"
+    "new_key"= "testkey"
   }
 }
