@@ -1,16 +1,8 @@
-provider "aws" {
-  region                  = "ap-northeast-2"
-  shared_credentials_file = "%USERPROFILE%\\.aws\\credentials"
-  profile                 = "default"
+provider "alicloud" {
+  region = "cn-shanghai"
 }
 
-resource "aws_instance" "example" {
-  ami = "ami-0e1e385b0a934254a"
-  instance_type = "t2.micro"
-  key_name = "seoul"
-  tags = {
-    "Owner" = "int32bit"
-    "Name" = "int32bit-test-ft"
-    "new_key"= "testkey"
-  }
+resource "alicloud_vpc" "Enterprise" {
+  name       = "Enterprise"
+  cidr_block = "172.17.0.0/16"
 }
